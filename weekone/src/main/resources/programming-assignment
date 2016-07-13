@@ -24,7 +24,6 @@ Your task in this problem is to run the greedy algorithm that schedules jobs in 
 ADVICE: If you get the wrong answer, try out some small test cases to debug your algorithm (and post your test cases to the discussion forum).
 1
 point
-
 69119377652
 
 
@@ -35,7 +34,7 @@ For this problem, use the same data set as in the previous problem.
 Your task now is to run the greedy algorithm that schedules jobs (optimally) in decreasing order of the ratio (weight/length). In this algorithm, it does not matter how you break ties. You should report the sum of weighted completion times of the resulting schedule --- a positive integer --- in the box below.
 1
 point
-
+67311454237
 
 
 3.
