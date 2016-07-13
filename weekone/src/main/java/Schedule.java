@@ -29,17 +29,12 @@ public class Schedule {
         try {
             String filePath = args[0];
             List<Job> jobList = JobFileReader.read(new File(filePath));
-            Collections.sort(jobList, new Comparator<Job>() {
-                    public int compare(Job o1, Job o2) {
-                        int score1 = o1.getWeight() - o1.getLength();
-                        int score2 = o2.getWeight() - o2.getLength();
-                        int diffScore = score2 - score1;
-                        return (diffScore != 0) ? diffScore : (o2.getWeight() - o1.getWeight());
-                    }
-                });
 
-            int weightSum = 0;
-            int currentTime = 0;
+
+            jobList.sort(getComparator2());
+
+            long weightSum = 0;
+            long currentTime = 0;
             for (int i = 0; i < jobList.size(); i++) {
                 Job job = jobList.get(i);
                 currentTime += job.getLength();
@@ -51,4 +46,26 @@ public class Schedule {
             e.printStackTrace();
         }
     }
+
+    public static Comparator<Job> getComparator() {
+        return new Comparator<Job>() {
+            public int compare(Job o1, Job o2) {
+                int score1 = o1.getWeight() - o1.getLength();
+                int score2 = o2.getWeight() - o2.getLength();
+                int diffScore = score2 - score1;
+                return (diffScore != 0) ? diffScore : (o2.getWeight() - o1.getWeight());
+            }
+        };
+    }
+
+    public static Comparator<Job> getComparator2() {
+        return new Comparator<Job>() {
+            public int compare(Job o1, Job o2) {
+                double score1 = o1.getWeight() / o1.getLength();
+                double score2 = o2.getWeight() / o2.getLength();
+                return (int)(score2 - score1);
+            }
+        };
+    }
+
 }
