@@ -1,17 +1,13 @@
 /**
- *  Copyright Murex S.A.S., 2003-2016. All Rights Reserved.
- * 
- *  This software program is proprietary and confidential to Murex S.A.S and its affiliates ("Murex") and, without limiting the generality of the foregoing reservation of rights, shall not be accessed, used, reproduced or distributed without the
- *  express prior written consent of Murex and subject to the applicable Murex licensing terms. Any modification or removal of this copyright notice is expressly prohibited.
+ * Author: Yang FENG
+ * 7/15/16
  */
+package common.jobschedule;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
 import com.google.common.collect.Lists;
-
-import common.jobschedule.Job;
-import common.jobschedule.Schedule;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -2,35 +2,59 @@
  * Author: Yang FENG
  * 7/15/16
  */
-package common.jobschedule;
+package common.mst;
 
-public class Job {
+import java.util.Objects;
+
+
+public class Edge {
 
     //~ ----------------------------------------------------------------------------------------------------------------
     //~ Instance fields
     //~ ----------------------------------------------------------------------------------------------------------------
 
-    private final int weight;
-    private final int length;
+    private final Node from;
+    private final Node to;
+    private final int cost;
 
     //~ ----------------------------------------------------------------------------------------------------------------
     //~ Constructors
     //~ ----------------------------------------------------------------------------------------------------------------
 
-    public Job(int weight, int length) {
-        this.weight = weight;
-        this.length = length;
+    public Edge(Node from, Node to, int cost) {
+        this.from = from;
+        this.to = to;
+        this.cost = cost;
     }
 
     //~ ----------------------------------------------------------------------------------------------------------------
     //~ Methods
     //~ ----------------------------------------------------------------------------------------------------------------
 
-    public int getWeight() {
-        return weight;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if ((o == null) || (getClass() != o.getClass()))
+            return false;
+        Edge edge = (Edge) o;
+        return (cost == edge.cost) && Objects.equals(from, edge.from) && Objects.equals(to, edge.to);
     }
 
-    public int getLength() {
-        return length;
+    @Override
+    public int hashCode() {
+        return Objects.hash(from, to, cost);
+    }
+
+    public Node getFrom() {
+        return from;
+    }
+
+    public Node getTo() {
+        return to;
+    }
+
+    public int getCost() {
+        return cost;
     }
 }
