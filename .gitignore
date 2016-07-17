@@ -1,3 +1,8 @@
+# PDF #
+######################
+*.pdf
+
+
 # Generated Binaries #
 ######################
 *.class
@@ -91,41 +96,6 @@ thirdparty/mos
 target-eclipse/
 .recommenders/
 
-# Murex build artifacts #
-#########################
-maven-repo-local/
-localRepo/
-/reports/
-modfiles/
-testResults/
-ErrorLogs/
-RecentChanges/
-ccache/*
-
-build/toolchain/cmake/
-build/toolchain/zxx/
-build/toolchain/dyntableparser/
-build/toolchain/ccache
-build/3pl/cslim/
-build/lib/*
-!build/lib/pom.xml
-build/yfiles_mapping/*
-build/onyx/cis-compile-full.jar
-build/onyx/cis-mxpack-full.jar
-
-compall*properties
-distiller*properties
-java_finalisation*properties
-
-/events
-/events.lock
-/index.idx
-
-progs/mxj/scripts.murex/mxg2000_settings.sh
-progs/mxj/requirements/temp/
-
-lib/flex/flexstudio/mock/exe/
-integration/mxdictionary/
 
 
 # ZXX Files #
